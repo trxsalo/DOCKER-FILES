@@ -1,0 +1,18 @@
+# Use root/example as user/password credentials
+version: '3.9'
+services:
+  postgres_container:
+    container_name: postgres_container
+    image: postgres:16
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data_container:/home/salomo/docker-volumenes/datamongo/db
+    #  - ./postgresql.conf:/usr/share/postgresql/postgresql.conf
+    environment:
+      POSTGRES_USER: salome
+      POSTGRES_PASSWORD: 010820
+      POSTGRES_DB: mydatabase
+    #command: ["postgres", "-c", "config_file=/usr/share/postgresql/postgresql.conf"]
+volumes:
+  postgres_data_container:
