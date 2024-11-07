@@ -30,7 +30,7 @@ app.get('/backup', (req, res) => {
     const backupFileName = `backup-${new Date().toISOString().replace(/[:.]/g, "-")}.sql`;
 
     // Comando de pg_dump para realizar el backup
-    const pgDumpCommand = `PGPASSWORD=${POSTGRES_PASSWORD} pg_dump -U ${POSTGRES_USER} -h ${POSTGRES_HOST} -d ${POSTGRES_DB}`;
+    const pgDumpCommand = `PGPASSWORD=${POSTGRES_PASSWORD} pg_dump -U ${POSTGRES_USER} -h ${POSTGRES_HOST} -d ${POSTGRES_DB} --sslmode=require`;
 
     // Ejecutar el comando y enviar el resultado como respuesta
     exec(pgDumpCommand, (error, stdout, stderr) => {

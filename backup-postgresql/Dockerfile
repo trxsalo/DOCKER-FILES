@@ -1,14 +1,17 @@
 # Usa una imagen base de Node.js
-FROM node:14
+FROM node:20
 
 # Instala el cliente de PostgreSQL para poder usar pg_dump
-RUN apt-get update && apt-get install -y postgresql-client
+RUN apt-get update && \
+    apt-get install -y postgresql-client libpq-dev && \
+    apt-get clean
 
 # Crea el directorio de la aplicación
 WORKDIR /app
 
 # Copia el resto de los archivos de la aplicación desde la carpeta src
-COPY src .
+COPY src/ .
+
 
 # Instala las dependencias de Node.js
 RUN npm install
