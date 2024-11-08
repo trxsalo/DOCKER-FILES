@@ -1,0 +1,8 @@
+version: '1'
+services:
+  backup-service:
+    image: trxsalo/backup-postgresql-api:latest  # Usa la imagen de Docker Hub
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env

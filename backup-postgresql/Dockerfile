@@ -16,13 +16,13 @@ RUN apt-get update && \
     apt-get install -y wget gnupg curl software-properties-common && \
     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs
-
-# Agrega el repositorio de PostgreSQL y instala postgresql-client versión 16
+ \
+    # Agrega el repositorio de PostgreSQL y su clave GPG, e instala el cliente PostgreSQL
 RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
     echo "deb http://apt.postgresql.org/pub/repos/apt focal-pgdg main" > /etc/apt/sources.list.d/pgdg.list && \
     apt-get update && \
     apt-get install -y postgresql-client-16 && \
-    apt-get clean \
+    apt-get clean
 
 # Verifica la versión de PostgreSQL instalada
 #RUN psql --version || echo "Cliente PostgreSQL instalado."
