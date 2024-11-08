@@ -1,13 +1,16 @@
 #!/bin/bash
+# Cargar variables de entorno del archivo .env si es necesario
+export $(grep -v '^#' .env | xargs)
 
 # Variables de conexión
-PASSWORD=""
-USUARIO=""
-PORT=""
-HOST="" # Cambia si el host no es local
-NUEVA_BASE=""
-RESPALDO="./backup.sql"
-ROL_EXISTENTE="" # Cambia a un rol que exista si prefieres
+# Variables de conexión
+PASSWORD="$POSTGRES_PASSWORD_BACKUP"
+USUARIO="$POSTGRES_USER_BACKUP"
+PORT="$POSTGRES_PORT_BACKUP"
+HOST="$POSTGRES_HOST_BACKUP"
+NUEVA_BASE=$NAME_DATABASE_BACKUP # Nombre de la nueva base de datos a crear
+RESPALDO="/tmp/restaurar_backup.sql" # Archivo de respaldo generado
+ROL_EXISTENTE="$USUARIO_BACKUP" # Rol existente
 
 # Crear la base de datos si no existe
 echo "Creando la base de datos '$NUEVA_BASE' si no existe..."
