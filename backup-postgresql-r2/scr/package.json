@@ -1,0 +1,32 @@
+{
+  "name": "scr",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsnd --respawn --clear ./main.ts",
+    "start": "tsc && node dist/main.js"
+  },
+  "keywords": [
+    "trxsalo"
+  ],
+  "author": "trxsalo",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.689.0",
+    "@aws-sdk/lib-storage": "^3.689.0",
+    "@aws-sdk/s3-request-presigner": "^3.689.0",
+    "@types/dotenv": "^6.1.1",
+    "@types/morgan": "^1.9.9",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "morgan": "^1.10.0",
+    "ts-node-dev": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/typescript": "^0.4.29",
+    "typescript": "^5.6.3"
+  }
+}
