@@ -5,12 +5,6 @@ import {Envs} from "../env/envs";
 
 export const bucket = async (req: Request, res: Response) => {
 
-    const token = req.query.token;
-    // Verifica si el token proporcionado es válido
-    if (!token || token !== Envs.AUTH_TOKEN) {
-        return res.status(403).json({message: 'Access denied: Invalid token'});
-    }
-
     const r2 = new ClassR2({
         endpoint: '',
         accessKeyId: '',
@@ -32,11 +26,11 @@ export const bucket = async (req: Request, res: Response) => {
             destination: '/backup'
         });
 
-        return res.status(200).json({message: 'Bucket', key: objectKey});
+        res.status(200).json({message: 'Bucket', key: objectKey});
 
     } catch (err) {
 
-        return res.status(500).json({message: 'Error en el servidor'});
+        res.status(500).json({message: 'Error en el servidor'});
 
     } finally {
         end = new Date().getTime();

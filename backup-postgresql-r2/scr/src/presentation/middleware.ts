@@ -8,19 +8,19 @@ export class Middleware{
         const authorization = req.headers.authorization;
 
 
-        if(!authorization)res.status(401).send('Not token provided');
+        if(!authorization)  res.status(401).send('Not token provided');
         if(!authorization?.startsWith('Bearer'))res.status(401).send('Invalid Bearer token');
 
         const token:string = authorization!.split(' ').at(1) || '' as string;
         try {
 
             if (!token || token !== Envs.AUTH_TOKEN) {
-                return res.status(403).json({message: 'Access denied: Invalid token'});
+                 res.status(403).json({message: 'Access denied: Invalid token'});
             }
             next();
         }
         catch (err){
-            return res.status(500).json({message: 'Error en el servidor'});
+             res.status(500).json({message: 'Error en el servidor'});
         }
     }
 
