@@ -1,0 +1,12 @@
+
+### Get request to example server
+GET http://localhost:3000/api/hello/
+Authorization: Bearer 123
+
+### GET Execute backup and return file
+GET http://localhost:3000/api/backup/
+Authorization: Bearer 123
+
+### GET Execute backup and save file en bucket
+GET http://localhost:3000/api/backup-save/
+Authorization: Bearer 123
