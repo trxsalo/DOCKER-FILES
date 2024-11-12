@@ -19,7 +19,7 @@ export const backup = async (req: Request, res: Response) => {
         res.send(data);
     } catch (error) {
         console.error(error, 'Error en backup');
-        res.status(500).send(error);
+        res.status(500).json(error);
     } finally {
         const duration = (end! - init!) / 1000;
         console.log({
@@ -48,7 +48,7 @@ export const ejecutarPgDump = () => {
 
         pgDump.on('close', (code: any) => {
             if (code !== 0) {
-                reject(new Error(`Error ejecutando pg_dump: ${stderr}`));
+                reject(`Error ejecutando pg_dump: ${stderr}`);
             } else {
                 resolve(stdout);
             }
