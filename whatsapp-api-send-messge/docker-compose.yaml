@@ -1,0 +1,11 @@
+services:
+  whatsapp-api-service:
+    image: trxsalo/whatsapp-api
+    ports:
+      - "4000:4000"
+    env_file:
+      - .env
+    volumes:
+      - whatsapp-api-service:/var/lib/whatsapp-api-service/data
+volumes:
+  whatsapp-api-service:
