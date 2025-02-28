@@ -10,7 +10,7 @@ services:
       - mongodb_data_container:/home/salomo/docker-volumenes/datamongo/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: salome
-      MONGO_INITDB_ROOT_PASSWORD: 010820 
+      MONGO_INITDB_ROOT_PASSWORD: 0000
 
 volumes:
   mongodb_data_container:

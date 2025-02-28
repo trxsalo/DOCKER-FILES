@@ -11,7 +11,7 @@ services:
     #  - ./postgresql.conf:/usr/share/postgresql/postgresql.conf
     environment:
       POSTGRES_USER: salome
-      POSTGRES_PASSWORD: 010820
+      POSTGRES_PASSWORD: 0000
       POSTGRES_DB: mydatabase
     #command: ["postgres", "-c", "config_file=/usr/share/postgresql/postgresql.conf"]
 volumes:
