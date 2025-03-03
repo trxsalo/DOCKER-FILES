@@ -31,7 +31,7 @@
         }'
         
         
-     curl -X GET   https://boc-whatsapp.tecno.com.bo/hello  \
+     curl -X GET   https://localhost:4000/hello  \
       -H "Authorization: Bearer mi_token_secreto" \
 ```
 
