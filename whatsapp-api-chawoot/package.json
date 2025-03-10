@@ -1,0 +1,41 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "npx rollup -c && node ./dist/main.js",
+    "lint": "eslint . --no-ignore",
+    "lintdev": "npm run lint && nodemon ./src/main.ts",
+    "dev": "nodemon ./src/main.ts"
+  },
+  "keywords": [],
+  "author": "trxsalo",
+  "license": "ISC",
+  "packageManager": "pnpm@10.5.1",
+  "dependencies": {
+    "@builderbot/bot": "1.0.28-alpha.0",
+    "@builderbot/provider-baileys": "1.0.28-alpha.0",
+    "@builderbot/provider-meta": "^1.2.5",
+    "@types/express": "^5.0.0",
+    "env-var": "^7.5.0",
+    "express": "^4.21.2",
+    "form-data": "^4.0.2",
+    "morgan": "^1.10.0",
+    "rollup-plugin-typescript2": "^0.36.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "dotenv": "^16.4.7",
+    "eslint": "^8.52.0",
+    "eslint-plugin-builderbot": "latest",
+    "nodemon": "^3.1.0",
+    "rollup": "^4.10.0",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.3"
+  }
+}
